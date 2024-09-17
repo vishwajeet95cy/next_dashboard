@@ -1,7 +1,5 @@
 "use client";
 
-// install (please try to align the version of installed @nivo packages)
-// yarn add @nivo/calendar
 import { ResponsiveTimeRange } from "@nivo/calendar";
 import {
   Card,
@@ -11,11 +9,6 @@ import {
   CardTitle,
 } from "../ui/card";
 
-// make sure parent container have a defined height when using
-// responsive component, otherwise height will be 0 and
-// no chart will be rendered.
-// website examples showcase many properties,
-// you'll often use just a few of them.
 const MyResponsiveTimeRange = ({ data }) => (
   <ResponsiveTimeRange
     data={data}

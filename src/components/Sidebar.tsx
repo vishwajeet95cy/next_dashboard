@@ -9,18 +9,13 @@ import {
   Settings,
   User,
 } from "lucide-react";
-import {
-  Command,
-  CommandGroup,
-  CommandItem,
-  CommandList,
-  CommandSeparator,
-} from "./ui/command";
+import { Command, CommandGroup, CommandItem, CommandList } from "./ui/command";
 import UserItem from "./UserItem";
 import Link from "next/link";
+import { Menu, MenuOptions } from "@/utils/data";
 
 const Sidebar = () => {
-  const menuList = [
+  const menuList: Menu[] = [
     {
       group: "General",
       options: [
@@ -76,9 +71,9 @@ const Sidebar = () => {
       <div className="grow">
         <Command style={{ overflow: "visible" }}>
           <CommandList style={{ overflow: "visible" }}>
-            {menuList.map((menu: object) => (
+            {menuList.map((menu: Menu) => (
               <CommandGroup key={menu.group} heading={menu.group}>
-                {menu.options.map((option: object) => (
+                {menu.options.map((option: MenuOptions) => (
                   <CommandItem
                     key={option.text}
                     className="flex gap-2 cursor-pointer"

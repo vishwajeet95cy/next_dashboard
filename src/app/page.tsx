@@ -29,7 +29,7 @@ export default function Home() {
               These are the orders of this month.
             </CardDescription>
           </CardHeader>
-          <div className="px-4 max-h-[350px]">
+          <div className="px-4 min-h-[350px]">
             <TableDemo />
           </div>
         </Card>
@@ -40,7 +40,7 @@ export default function Home() {
               These are the users of this month.
             </CardDescription>
           </CardHeader>
-          <div className="px-4 max-h-[350px]">
+          <div className="px-4 min-h-[350px]">
             <DataTableDemo />
           </div>
         </Card>

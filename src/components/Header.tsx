@@ -8,36 +8,20 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useState } from "react";
-
+import { Notification, notificationData } from "@/utils/data";
 const Header = () => {
-  const [notification, setNotification] = useState<Array<any>>([
-    {
-      text: "This is a notification",
-      date: "02-01-2005",
-      read: true,
-    },
-    {
-      text: "This is another notification",
-      date: "02-01-2005",
-      read: false,
-    },
-  ]);
-
   return (
     <div className="grid grid-cols-2 gap-4 p-4 border-b">
       <CommandDemo />
       <div className="flex items-center justify-end">
         <DropdownMenu>
-          <DropdownMenuTrigger>
+          <DropdownMenuTrigger asChild>
             <Button className="relative" variant="outline" size="icon">
               <div
                 className={` absolute -top-2 -right-1 h-3 w-3 rounded-full my-1 ${
-                  notification.find((x: any) => x.read == true)
+                  notificationData.find((x: Notification) => x.read)
                     ? "bg-green-500"
                     : "bg-neutral-200"
                 }`}
@@ -46,9 +30,9 @@ const Header = () => {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            {notification.map((item: any, key: number) => (
+            {notificationData.map((item: Notification) => (
               <DropdownMenuItem
-                key={key}
+                key={item.text}
                 className="py-2 px-3 cursor-pointer hover:bg-neutral-50 transition flex items-start gap-2"
               >
                 <div
