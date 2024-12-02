@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from "../ui/card";
 
-const MyResponsiveTimeRange = ({ data }:{data:[]}) => (
+const MyResponsiveTimeRange = ({ data }:{data:{value:number,day:string}[]}) => (
   <ResponsiveTimeRange
     data={data}
     from="2023-01-01"
