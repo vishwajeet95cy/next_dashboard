@@ -10,7 +10,15 @@ import {
 } from "../ui/card";
 import { generalChartData } from "@/utils/data";
 
-const MyResponsiveBump = ({ data }) => {
+export type MyResponsiveBumpTypes = {
+  id: string;
+  data: {
+    x: string;
+    y: number;
+  }[];
+}[];
+
+const MyResponsiveBump = ({ data }: { data: MyResponsiveBumpTypes }) => {
   return (
     <ResponsiveBump
       data={data}

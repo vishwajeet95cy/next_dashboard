@@ -10,7 +10,16 @@ import {
 } from "../ui/card";
 import { lineChartData } from "@/utils/data";
 
-const MyResponsiveLine = ({ data }) => (
+export type MyResponsiveLine = {
+  id: string;
+  color: string;
+  data: {
+    x: string;
+    y: number;
+  }[];
+}[];
+
+const MyResponsiveLine = ({ data }: { data: MyResponsiveLine }) => (
   <ResponsiveLine
     data={data}
     xScale={{ type: "point" }}
