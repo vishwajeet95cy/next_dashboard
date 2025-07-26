@@ -1,6 +1,6 @@
 "use client";
 
-import { ResponsiveBump } from "@nivo/bump";
+import { ResponsiveBump, BumpSerie } from "@nivo/bump";
 import {
   Card,
   CardContent,
@@ -10,17 +10,20 @@ import {
 } from "../ui/card";
 import { generalChartData } from "@/utils/data";
 
-export type MyResponsiveBumpTypes = {
-  id: string;
-  data: {
-    x: string;
-    y: number;
-  }[];
-}[];
+export type MyDatum = {
+  x: string;
+  y: number;
+};
 
-const MyResponsiveBump = ({ data }: { data: MyResponsiveBumpTypes }) => {
+export type MySerie = BumpSerie<MyDatum>;
+
+interface MyResponsiveBumpProps {
+  data: MySerie[];
+}
+
+const MyResponsiveBump = ({ data }: MyResponsiveBumpProps) => {
   return (
-    <ResponsiveBump
+    <ResponsiveBump<MyDatum>
       data={data}
       colors={{ scheme: "spectral" }}
       lineWidth={3}
