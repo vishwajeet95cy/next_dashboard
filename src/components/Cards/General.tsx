@@ -1,6 +1,6 @@
 "use client";
 
-import { ResponsiveBump, BumpSerie } from "@nivo/bump";
+import { ResponsiveBump } from "@nivo/bump";
 import {
   Card,
   CardContent,
@@ -15,7 +15,10 @@ export type MyDatum = {
   y: number;
 };
 
-export type MySerie = BumpSerie<MyDatum>;
+export type MySerie = {
+  id: string;
+  data: MyDatum[];
+};
 
 interface MyResponsiveBumpProps {
   data: MySerie[];
